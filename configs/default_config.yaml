@@ -1,0 +1,41 @@
+# Default Configuration for Neural Network Training
+
+# Model Configuration
+model:
+  type: 'dense'  # Options: 'dense', 'autoencoder', 'rbm'
+  input_dim: 100
+  hidden_units: 128
+  num_classes: 2
+  dropout_rate: 0.3
+
+# Data Configuration
+data:
+  num_samples: 1000
+  test_split: 0.2
+  validation_split: 0.2
+  seed: 42
+  normalize: true
+
+# Training Configuration
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: 'adam'  # Options: 'adam', 'sgd', 'rmsprop'
+  loss_function: 'sparse_categorical_crossentropy'
+  validation_frequency: 1
+
+# Regularization
+regularization:
+  l1: 0.0
+  l2: 0.0001
+  early_stopping: true
+  patience: 10
+
+# Output Configuration
+output:
+  save_model: true
+  save_history: true
+  plot_results: true
+  results_dir: 'results'
+  verbose: 1
